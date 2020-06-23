@@ -1,8 +1,7 @@
 package com.ecodeup.com;
 
 import java.io.IOException;
-import java.sql.Date;
-
+import java.util.Date;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -32,10 +31,11 @@ public class MyServlet extends HttpServlet {
 			throws ServletException, IOException {
     	//TODO Auto-generated method stub
     	MyBean bean = new MyBean();
-    	bean.setDate(new Date(0));
+    	bean.setDate(new Date());
+    	bean.setName("Maria");
     	bean.setId(111);
     	request.setAttribute("bean", bean);
-    	request.setAttribute("name", "juan");
+    	/**request.setAttribute("name", "juan");*/
 		getServletContext().getRequestDispatcher("/WEB-INF/jsp/index.jsp").forward(request, response);
 	}/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)

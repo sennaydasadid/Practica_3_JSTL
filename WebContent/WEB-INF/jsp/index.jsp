@@ -19,21 +19,28 @@
 	<br>
 	<%--Comentarios: Esto es un comentario en JSP --%>
 	
-	<%--Esto es un scriptlet JSP --%>
+	
+		<%--Esto es un scriptlet JSP --%>
 	<% out.println(); %>
-	<%out.print("Hola mundo desde JSP"); %>
+	<%out.print("Hola mundo desde JSP"); %><br>
 	<c:out value="Hola mundo desde JSTL"></c:out>
 		<br>
+	
+	<form action="/JSP/MyServlet" method="GET">
+		<input type="submit" name="btnAceptar" value="Actualizar fecha">
+	</form>
+	
+
 	<%--Esto es una expresión en JSP --%>
-	<%="Esto es una expresión" %>
+	<%--<%="Esto es una expresión" %>--%>
 	<br>
 	<%--Se declara una directiva para utilizar la clase Date <%@ page import="java.util.Date"  %> --%>
 	
 	<%-- Date d = new Date(); --%>
 	<%--out.println("Fecha Actual: "+d);--%>
 	
-	<p>Formatted Name:<c:out value="${bean.id}"></c:out></p>
-	<p>Formatted Date (3): <fmt:formatDate type = "both" value = "${bean.date}"/></p>
+	<p>Formatted Name:<c:out value="${bean.name}"></c:out></p>
+	<p>Formatted Date: <fmt:formatDate type = "both" value = "${bean.date}"/></p>
 	
 		<br>
 	<%-- Declaraciones en JSP --%>
